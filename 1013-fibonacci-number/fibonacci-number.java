@@ -1,11 +1,16 @@
 class Solution {
     public int fib(int n) {
- int[] dp=new int[n+1];
- if(n<=1){
+int pre2=0,pre=1;
+int cur=0;
+if(n<=1){
     return n;
- }if(dp[n]!=0){
-    return dp[n];
- }
- return dp[n]=fib(n-1)+fib(n-2);
- }
+}
+for(int i=2;i<=n;i++){
+    cur=pre+pre2;
+    pre2=pre;
+    pre=cur;
+}
+     return cur;
+}
+
   }
